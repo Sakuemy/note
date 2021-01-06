@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note</title>
+</head>
+<body style="height: 100%;">
+    <textarea class="print" name="note" id="" cols="30" rows="10" style="position: fixed; top: 0; left: 0; border: 0; resize: none; outline: none; -moz-appearance: none; background-color: white; font-size: 16px;  width: 90%; height: 100%; padding: 10px 5%;"></textarea>
+
+    <script type="text/javascript">
+        let print = document.querySelector('.print');
+
+        //сохраняю в локалсторедж при любом изменении поля
+        print.oninput = function () {
+            localStorage.setItem('areaText', print.value);
+        }
+
+        //функция по загрузке из localstorage
+        function onLoad () {
+            print.value = localStorage.getItem('areaText');
+        }
+        //вызываю функцию по загрузке из localstorage
+        onLoad();
+    </script>
+
+</body>
+</html>
