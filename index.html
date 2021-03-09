@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="style/style.css">    
 </head>
-<body>
-    <textarea placeholder="Просто напишите заметку)" class="print" name="note"></textarea>
+<body class="page dark_theme change_theme">
+    <textarea placeholder="Просто напишите заметку)" class="print change_theme" name="note"></textarea>
     <div class="hiddenDiv"></div>
     <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">···</button>
+        <button onclick="myFunction()" class="dropbtn" title="Меню">···</button>
         <div id="myDropdown" class="dropdown-content">
             <a class="tem_button" onclick="tem()" href="#">Светлая тема</a>
             <a href="https://t.me/Sakuemy" target="_blank">Связаться с разработчиком</a>
@@ -20,7 +20,7 @@
         </div>
     </div>
     <div class="button_div">
-        <button onclick="clr()" class="dropbtn clr"><img src="img/clr.png"></button>
+        <button onclick="clr()" class="dropbtn clr change_theme" title="Очистить содержимое"><img src="img/clr.png"></button>
     </div>
     <script  src="js/TextSaveAndLoad.js"></script>
     <script  src="js/OpenMenu.js"></script>
