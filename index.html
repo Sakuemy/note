@@ -5,10 +5,7 @@
     <link rel="shortcut icon" href="img/logo.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="style/style.css">
-    <script  src="js/click.js"></script>
-    <script  src="js/OpenMenu.js"></script> 
-    
+    <link rel="stylesheet" href="style/style.css">    
 </head>
 <body>
     <textarea placeholder="Просто напишите заметку)" class="print" name="note"></textarea>
@@ -16,12 +13,17 @@
     <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">···</button>
         <div id="myDropdown" class="dropdown-content">
-          <a href="https://t.me/Sakuemy" target="_blank">Связаться с разработчиком</a>
-          <a onclick="donationclick()" href="#">Пожертвование</a>
-          <a onclick="infoclick()" href="#">О сайте</a>
+            <a class="tem_button" onclick="tem()" href="#">Светлая тема</a>
+            <a href="https://t.me/Sakuemy" target="_blank">Связаться с разработчиком</a>
+            <a onclick="donationclick()" href="#">Пожертвование</a>
+            <a onclick="infoclick()" href="#">О сайте</a>
         </div>
     </div>
-    <script  src="js/AutosizeTextarea.js"></script>
+    <div class="button_div">
+        <button onclick="clr()" class="dropbtn clr"><img src="img/clr.png"></button>
+    </div>
     <script  src="js/TextSaveAndLoad.js"></script>
+    <script  src="js/OpenMenu.js"></script>
+    <script  src="js/click.js"></script> 
 </body>
 </html>
