@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Note</title>
+    <link rel="shortcut icon" href="img/logo.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+</head>
+<body>
+    <textarea placeholder="Просто напишите заметку)" class="print" name="note"></textarea>
+
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">···</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="https://t.me/Sakuemy" target="_blank">Связаться с разработчиком</a>
+          <a onclick="donationclick()" href="#">Пожертвование</a>
+          <a onclick="infoclick()" href="#">О сайте</a>
+        </div>
+    </div>
+    
+    <style>
+        body {
+            height: 100%;
+            background-color: rgb(230, 230, 230);
+            margin: 0;
+        }
+
+        .print {
+            position: absolute; 
+            left: 5%;
+            right: 5%;
+            top: 2%;
+            bottom:0;
+            width: 84%;
+            border: 0;
+            resize: none;
+            outline: none;
+            -moz-appearance: none;
+            background-color: white;
+            font-size: 16px;
+            padding: 3% 3%;
+            box-shadow: 0 0 15px;
+            border-radius: 5px;
+        }
+
+        .dropbtn {
+            background-color: rgb(199, 199, 199);
+            color: rgb(0, 0, 0);
+            padding: 5px;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: rgb(160, 160, 160);
+        }
+        
+        .dropdown {
+            position: absolute;
+            display: inline-block;
+            right: 1%;
+            top: 1%;
+        }
+
+        button:active, button:focus {
+            outline: none;
+        }
+        button::-moz-focus-inner {
+            border: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: rgb(160, 160, 160);
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+
+    <script type="text/javascript">
+        let print = document.querySelector('.print');
+
+        //сохраняю в локалсторедж при любом изменении поля
+        print.oninput = function () {
+            localStorage.setItem('areaText', print.value);
+        }
+
+        //функция по загрузке из localstorage
+        function onLoad () {
+            print.value = localStorage.getItem('areaText');
+        }
+        //вызываю функцию по загрузке из localstorage
+        onLoad();
+
+        function infoclick() {
+            alert("Этот сайт предназначен для создания быстрых заметок. Все данные хранятся на Вашем компьютере и при очистке кэша браузера удаляются. \n\nСайт создан на коленке в 2021 году");
+        }
+
+        function donationclick() {
+            alert("WebMoney кошелек для пожертвования разработчику: Z327592589895.");
+        }
+
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+        
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+    </script>
+
+</body>
+</html>
